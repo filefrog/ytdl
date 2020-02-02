@@ -1,5 +1,5 @@
 IMAGE  ?= filefrog/ytdl:latest
-GITHUB := https://github.com/jhunt/ytdl
+GITHUB := https://github.com/filefrog/ytdl
 
 .PHONY: default build push
 default: build
