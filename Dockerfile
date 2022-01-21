@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.15
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -9,7 +9,7 @@ LABEL maintainer="James Hunt <images@huntprod.com>" \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.schema-version="1.0.0"
 
-RUN apk add --no-cache ca-certificates curl ffmpeg python gnupg \
+RUN apk add --no-cache ca-certificates curl ffmpeg python2 gnupg \
  && curl -Lo /usr/local/bin/youtube-dl https://yt-dl.org/downloads/latest/youtube-dl \
  && curl -Lo youtube-dl.sig https://yt-dl.org/downloads/latest/youtube-dl.sig \
  && gpg --keyserver keyserver.ubuntu.com --recv-keys '7D33D762FD6C35130481347FDB4B54CBA4826A18' \
